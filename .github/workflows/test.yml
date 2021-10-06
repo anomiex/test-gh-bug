@@ -1,0 +1,19 @@
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - run: |
+          echo "This is ok."
+      - run: |
+          echo "This probably isn't."
+          printf '%*s\n' 2000000 '' | tr ' ' 'X'
+          echo "That was a lot of Xs."
+      - run: |
+          echo "Sleeping a few seconds..."
+          sleep 5
+          echo "Done."
